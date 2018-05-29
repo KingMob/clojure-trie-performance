@@ -5,7 +5,9 @@
    [modulo-lotus.trie.trie-node :as tr :refer [TrieNode add-substring count-w-prefix count-words prefix]]
    [taoensso.tufte :as tufte :refer (defnp p profiled profile)]))
 
-;; Like 06, but replace volatile-mutable with unsynchronized-mutable, switch to Java arrays and primitives
+;; Like 06, but remove val field, replace volatile-mutable with unsynchronized-mutable, switch to Java arrays and primitives
+
+(set! *warn-on-reflection* true)
 
 (declare default-alphabet-trie-node)
 
@@ -20,7 +22,7 @@
       (let [i (int (alpha-idx c))
             child (aget children i)]
         (when-not child
-          (aset children i (default-alphabet-trie-node c)))
+          (aset children i (default-alphabet-trie-node)))
         (add-substring (aget children i) cs))))
 
   (prefix [n s]
@@ -42,7 +44,7 @@
 (defn empty-alphabet-vector []
   (make-array AlphabetTrieNode 26))
 
-(defn default-alphabet-trie-node [val]
+(defn default-alphabet-trie-node []
   (->AlphabetTrieNode false 0 (empty-alphabet-vector)))
 
 (defn process-op [db op contact]
@@ -53,7 +55,7 @@
 (defn run
   []
   (let [n (Integer/parseInt (read-line))
-        db (default-alphabet-trie-node 0)]
+        db (default-alphabet-trie-node)]
     (loop [i n]
       (when (> i 0)
         (let [[op contact] (split (read-line) #"\s+")]
