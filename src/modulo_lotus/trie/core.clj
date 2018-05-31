@@ -11,7 +11,7 @@
             [modulo-lotus.trie.trie06 :as trie06]
             [modulo-lotus.trie.trie07 :as trie07]
             [modulo-lotus.trie.trie08 :as trie08]
-            [modulo-lotus.trie.trie09 :as trie09]
+            #_[modulo-lotus.trie.trie09 :as trie09]
             [taoensso.tufte :as tufte :refer [defnp p profiled profile]]))
 
 (def ^:const input-file "add-max-then-find.txt")
