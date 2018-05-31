@@ -1,6 +1,6 @@
 ## About
 
-This is the code for the [Clojure trie performance post](http://modulolotus.net/posts/2018-05-28-clojure-trie-performance/) at my blog, [Modulo Lotus](http://modulolotus.net).
+This is the code for the [Clojure trie performance post](http://modulolotus.net/posts/2018-05-31-clojure-trie-performance/) at my blog, [Modulo Lotus](http://modulolotus.net).
 
 To run from the command-line, do something like:
 
