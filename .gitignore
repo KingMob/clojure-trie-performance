@@ -41,3 +41,5 @@ modules.xml
 
 .rebel_readline_history
 .cpcache/
+
+.DS_Store
